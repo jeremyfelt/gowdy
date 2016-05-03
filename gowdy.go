@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+// I can declare a variable here and not end up using it.
+var php, wp, test bool
+
 // Type can be supplied after each parameter...
 func add(x int, y int) int {
 	return x + y
@@ -27,6 +30,15 @@ func sumadd(a, b int) (x, y int) {
 }
 
 func main() {
+	// This seems super confusing at first. If an "initializer" is present,
+	// the variable type can be omitted and the variables will assume the
+	// type of the initializer. The case below seems pretty unreadable overall.
+	var one, two, three = true, 1, "omg"
+
+	fmt.Println(one) // Output boolean `true`
+	fmt.Println(two) // Ouput int `1`
+	fmt.Println(three) // Output string `omg`
+
 	a, b, c := addsum(add(123,234), 124)
 	fmt.Println(a)
 	fmt.Println(b)
