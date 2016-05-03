@@ -33,7 +33,7 @@ func main() {
 	// This seems super confusing at first. If an "initializer" is present,
 	// the variable type can be omitted and the variables will assume the
 	// type of the initializer. The case below seems pretty unreadable overall.
-	var one, two, three = true, 1, "omg"
+	one, two, three := true, 1, "omg"
 
 	fmt.Println(one) // Output boolean `true`
 	fmt.Println(two) // Ouput int `1`
